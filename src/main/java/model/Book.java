@@ -21,22 +21,27 @@ public class Book implements Serializable {
         this.available = available;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
-    public String getAuthor(){
+
+    public String getAuthor() {
         return author;
     }
-    public String getGenre(){
+
+    public String getGenre() {
         return genre;
     }
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    public double getPrice(){
+
+    public double getPrice() {
         return price;
     }
-    public int getAvailable(){
+
+    public int getAvailable() {
         return available;
     }
 }

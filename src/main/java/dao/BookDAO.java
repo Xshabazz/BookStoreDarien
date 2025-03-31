@@ -45,6 +45,7 @@ public class BookDAO {
         }
         return books;
     }
+
     public static boolean addBook(String title, String author, String genre, double price) {
         String sql = "INSERT INTO books (title, author, genre, price) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();

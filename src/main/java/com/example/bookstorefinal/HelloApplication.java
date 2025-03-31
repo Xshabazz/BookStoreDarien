@@ -24,16 +24,16 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         try {
-            // Make sure this matches your MySQL server setup
+
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/bookstore", // Replace 'bookstore' with your database name
-                    "root", // Replace 'root' with your MySQL username
-                    "xzlkjc(8sdfj&f" // Replace with your MySQL password
+                    "jdbc:mysql://localhost:3306/bookstore",
+                    "root",
+                    "xzlkjc(8sdfj&f"
             );
             System.out.println("Connected to the database!");
 
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle any SQL exceptions
+            e.printStackTrace();
         }
         launch();
     }

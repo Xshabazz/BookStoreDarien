@@ -12,16 +12,37 @@ public class User {
         this.password = password;
         this.role = role;
     }
-    public String getUsername(){
-        return username;
-    };
-    public String getRole(){
-        return role;
-    };
-    public String getPassword(){
-        return password;
-    };
 
-    // Getters and Setters
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    // Setters
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
 }
 
