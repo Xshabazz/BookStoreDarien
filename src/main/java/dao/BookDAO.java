@@ -45,5 +45,20 @@ public class BookDAO {
         }
         return books;
     }
+    public static boolean addBook(String title, String author, String genre, double price) {
+        String sql = "INSERT INTO books (title, author, genre, price) VALUES (?, ?, ?, ?)";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, title);
+            stmt.setString(2, author);
+            stmt.setString(3, genre);
+            stmt.setDouble(4, price);
+            return stmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
 
