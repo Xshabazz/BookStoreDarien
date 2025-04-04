@@ -60,6 +60,40 @@ public class BookDAO {
             return false;
         }
     }
+    public static boolean updateBookAvailability(int bookId, int quantityChange) {
+        String sql = "UPDATE books SET available = available + ? WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, quantityChange); // Negative value to reduce availability
+            stmt.setInt(2, bookId);
+            return stmt.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public static Book getBookById(int bookId) {
+        String sql = "SELECT * FROM books WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, bookId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new Book(rs.getInt("id"),
+                        rs.getString("title"),
+                        rs.getString("author"),
+                        rs.getString("genre"),
+                        rs.getDouble("price"),
+                        rs.getInt("available"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null; // Return null if no book found with that ID
+    }
+
 
 }
 
