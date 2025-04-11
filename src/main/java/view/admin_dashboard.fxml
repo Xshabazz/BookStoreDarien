@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.AdminDashboard"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminDashboardController">
+    <TabPane>
+        <!-- Books Tab -->
+        <Tab text="Books">
+            <AnchorPane>
+                <TableView fx:id="bookTable">
+                    <columns>
+                        <TableColumn text="ID" fx:id="bookIdColumn" />
+                        <TableColumn text="Title" fx:id="bookTitleColumn" />
+                        <TableColumn text="Author" fx:id="bookAuthorColumn" />
+                        <TableColumn text="Genre" fx:id="bookGenreColumn" />
+                        <TableColumn text="Price" fx:id="bookPriceColumn" />
+                    </columns>
+                </TableView>
+                <Button text="Add Book" fx:id="addBookButton" layoutX="10" layoutY="250" />
+                <Button text="Delete Book" fx:id="deleteBookButton" layoutX="100" layoutY="250" />
+            </AnchorPane>
+        </Tab>
 
+        <!-- Users Tab -->
+        <Tab text="Users">
+            <AnchorPane>
+                <TableView fx:id="userTable">
+                    <columns>
+                        <TableColumn text="ID" fx:id="userIdColumn" />
+                        <TableColumn text="Username" fx:id="userUsernameColumn" />
+                        <TableColumn text="Role" fx:id="userRoleColumn" />
+                    </columns>
+                </TableView>
+                <Button text="Add User" fx:id="addUserButton" layoutX="10" layoutY="250" />
+                <Button text="Delete User" fx:id="deleteUserButton" layoutX="100" layoutY="250" />
+            </AnchorPane>
+        </Tab>
+
+        <!-- Orders Tab -->
+        <Tab text="Orders">
+            <AnchorPane>
+                <TableView fx:id="orderTable">
+                    <columns>
+                        <TableColumn text="Order ID" fx:id="orderIdColumn" />
+                        <TableColumn text="User ID" fx:id="orderUserIdColumn" />
+                        <TableColumn text="Book ID" fx:id="orderBookIdColumn" />
+                        <TableColumn text="Date" fx:id="orderDateColumn" />
+                    </columns>
+                </TableView>
+                <Button text="View Order" fx:id="viewOrderButton" layoutX="10" layoutY="250" />
+                <Button text="Delete Order" fx:id="deleteOrderButton" layoutX="100" layoutY="250" />
+            </AnchorPane>
+        </Tab>
+    </TabPane>
 </AnchorPane>

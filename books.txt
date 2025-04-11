@@ -1,0 +1,2 @@
+1,The Great Gatsby,F. Scott Fitzgerald,Fiction,10.99,5
+2,1984,George Orwell,Dystopian,8.99,10
